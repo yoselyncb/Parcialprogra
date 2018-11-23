@@ -147,9 +147,9 @@
                   <div class="content">
                     <div class="row">
                       <div class="col col-sm-12">
-                        <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-notebook"></i> Crear Libro</a>
+                        {{-- <a class="btn btn-success" role="button" data-toggle="collapse" href="#form0" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-notebook"></i> Crear Libro</a> --}}
                       </div>
-                      <div class="collapse" id="form0">
+                      <div class="col col-sm-12" id="form0">
                         <hr>
                         <form method="POST" action="{{route('libroCrear')}}" accept-charset="UTF-8">
                           {{ csrf_field() }}
@@ -163,7 +163,7 @@
                           </div>
                           <div class="form-group col-md-4">
                             <label for="Año">Año</label>
-                            <input class="form-control" placeholder="Año" required name="año" type="date" id="Año">
+                            <input class="form-control" placeholder="Año" required name="año" type="YEAR" id="Año">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="Ubicacion">Ubicación de la biblioteca</label>
@@ -178,7 +178,7 @@
                             <select class="form-control" name="Tipo" required>
                               <option value="">Seleccione una opcion</option>
                               @foreach ($tipos as $tipo)
-                                <option value="{{$tipo->id}}">{{$tipo->Descripcion}}</option>
+                                <option value="{{$tipo->id}}">{{$tipo->descripcion}}</option>
                               @endforeach
                             </select>
                           </div>
@@ -195,7 +195,7 @@
                           </div>
                         </form>
                       </div>
-                      <hr class="col-md-12">
+                      {{-- <hr class="col-md-12">
                       @if ($libro->count() > 0)
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                           <thead>
@@ -209,9 +209,9 @@
                           <tbody>
                             @foreach ($libro as $libro)
                               <tr class="odd gradeX">
-                                <td>{{$libro->Nombre}}</td>
-                                <td>{{$libro->Autor}}</td>
-                                <td>{{$libro->DiasPrestamo}}</td>
+                                <td>{{$libro->nombre}}</td>
+                                <td>{{$libro->autor}}</td>
+                                <td>{{$libro->diasP}}</td>
                                 <td class="center">
                                   <a title="Editar" class="btn btn-warning" role="button" data-toggle="collapse" href="#form{{$libro->id}}" aria-expanded="false" aria-controls="collapseExample"><i class="pe-7s-pen" aria-hidden="true"></i></a>
                                   <a title="Eliminar" href="{{route('libroBorrar',$libro->id)}}" onclick="return confirm('¿Seguro que deseas eliminar?')" class="btn btn-danger"><i class="pe-7s-close" aria-hidden="true"></i></a>
@@ -274,7 +274,7 @@
                         <div class="alert alert-info col-md-12">
                           <span>No hay planes creados</span>
                         </div>
-                      @endif
+                      @endif --}}
                     </div>
                   </div>
                 </div>

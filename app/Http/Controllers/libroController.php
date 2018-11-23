@@ -19,7 +19,7 @@ class libroController extends Controller
       $libro = New Libro();
       $libro->nombre = $request->nombreLibro;
       $libro->editorial = $request->editorial;
-      $libro->año = $request->Año;
+      $libro->año = $request->año;
       $libro->ubicacion = $request->ubicacion;
       $libro->autor = $request->autor;
       $libro->area_conocimiento = $request->AreaConocimiento;

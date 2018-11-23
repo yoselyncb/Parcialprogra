@@ -20,12 +20,12 @@ class CreateLibrosTable extends Migration
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->timestamp('create_time')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('update_time')->nullable();
+            $table->timestamp('create_at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('update_at')->nullable();
             $table->increments('id');
             $table->string('nombre', 45)->nullable();
             $table->string('editorial', 45)->nullable();
-            $table->string('año', 45)->nullable();
+            $table->date('año')->nullable();
             $table->string('ubicacion', 45)->nullable();
             $table->string('autor', 45)->nullable();
             $table->string('area_conocimiento', 45)->nullable();

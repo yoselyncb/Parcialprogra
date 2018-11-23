@@ -20,8 +20,8 @@ class CreatePrestamoTable extends Migration
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->timestamp('create_time')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('update_time')->nullable();
+            $table->timestamp('create_at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('update_at')->nullable();
             $table->increments('id');
             $table->date('fecha_prestamo')->nullable();
             $table->date('fecha_entrega')->nullable();
